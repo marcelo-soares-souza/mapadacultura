@@ -5,7 +5,7 @@ end
 
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.17'
+gem 'rails', '3.2.22.1'
 gem 'i18n'
 
 # gem 'sqlite3'
@@ -64,6 +64,7 @@ gem 'feedzirra', '~> 0.2.0.rc2'
 
 # Geolocation
 gem 'gmaps4rails', '1.5.6'
+#gem 'gmaps4rails'
 
 # Embed Content
 gem 'auto_html'

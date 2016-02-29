@@ -3,16 +3,26 @@ Mapadacultura::Application.configure do
 
   config.action_mailer.delivery_method = :smtp
 
-  config.action_mailer.smtp_settings = {
-    address: "localhost",
-    port: 25,
+#  config.action_mailer.smtp_settings = {
+#    address: "localhost",
+#    port: 25,
     # openssl_verify_mode: 'none'
     # domain: "mapadacultura.org",
     # authentication: "plain",
     # user_name: "user",
     # password: "password",
     # enable_starttls_auto: true
-  }
+#  }
+
+  config.action_mailer.smtp_settings = {
+  address:              'smtp.gmail.com',
+  port:                 587,
+  domain:               'mapadacultura.org',
+  user_name:            'soares.souza@gmail.com',
+  password:             '1234X3m3l334livre1234',
+  authentication:       'plain',
+  enable_starttls_auto: true  }
+
 
   # Code is not reloaded between requests
   config.cache_classes = true
@@ -67,12 +77,12 @@ Mapadacultura::Application.configure do
   config.action_mailer.default_url_options = {:host => 'mapadacultura.org'}
 
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    :address => "mapadacultura.org",
-    :port    => 25,
-    :enable_starttls_auto => false,
-    :openssl_verify_mode  => 'none'
-  }
+#  config.action_mailer.smtp_settings = {
+#    :address => "mapadacultura.org",
+#    :port    => 25,
+#    :enable_starttls_auto => false,
+#    :openssl_verify_mode  => 'none'
+#  }
 
   # Enable threaded mode
   # config.threadsafe!
