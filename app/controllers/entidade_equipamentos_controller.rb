@@ -106,7 +106,7 @@ class EntidadeEquipamentosController < ApplicationController
     @atividades        = Atividade.all
 
     if @atividades.empty?
-      redirect_to "/atividades/new", :notice => 'Crie ao menos uma Atividade.'
+      redirect_to new_atividade_path, :notice => 'Crie ao menos uma Atividade.'
       return
     end
 

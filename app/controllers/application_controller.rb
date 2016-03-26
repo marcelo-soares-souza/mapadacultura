@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
   def admin_user
     if user_signed_in?
       if ! current_user.admin?
-        redirect_to "/", :alert => 'Restrito apenas para Administradores.'
+        redirect_to home_index_path, :alert => 'Restrito apenas para Administradores.'
         return false
       else
         return true

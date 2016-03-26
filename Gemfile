@@ -5,10 +5,10 @@ end
 
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.22.1'
+gem 'rails', '3.2.22.2'
 gem 'i18n'
+gem 'rake', '10.4.0'
 
-# gem 'sqlite3'
 gem 'pg'
 
 gem 'sass-rails',   '~> 3.2.3'
@@ -18,15 +18,15 @@ gem 'therubyracer', '0.10.2'
 gem 'uglifier', '>= 1.0.3'
 
 gem 'jquery-rails', '2.1.4'
-gem 'jquery-ui-rails'
+gem 'jquery-ui-rails', '4.2.0'
 
 gem 'twitter-bootstrap-rails', '2.2.1'
 gem 'ckeditor', '~> 4.0.2'
 
 # Media
 gem 'mime-types', :require => 'mime/types'
-gem 'paperclip'
-gem 'paperclip-ffmpeg'
+gem 'paperclip', '4.1.1'
+gem 'paperclip-ffmpeg', '1.0.1'
 gem 'rmagick'
 gem 'fancybox2-rails'
 
@@ -48,7 +48,7 @@ gem 'sunspot_rails', '2.0.0'
 gem 'sunspot_solr', '2.0.0'
 gem 'sunspot_with_kaminari'
 
-gem 'progress_bar'
+gem 'progress_bar', '1.0.0'
 gem 'acts-as-taggable-on', '~> 2.3.3'
 gem 'opinio'
 gem 'settingslogic'
@@ -58,13 +58,11 @@ gem 'nokogiri'
 gem 'htmlentities'
 gem 'truncate_html'
 
-gem 'gorillib'
 gem 'curb'
 gem 'feedzirra', '~> 0.2.0.rc2'
 
 # Geolocation
 gem 'gmaps4rails', '1.5.6'
-#gem 'gmaps4rails'
 
 # Embed Content
 gem 'auto_html'
@@ -73,3 +71,7 @@ gem 'auto_html'
 gem 'brazilian-rails'
 gem 'brcpfcnpj'
 gem 'brcep'
+
+gem 'gorillib', '0.5.0'
+gem 'configliere', '0.4.18'
+gem 'highline', '1.6.21'

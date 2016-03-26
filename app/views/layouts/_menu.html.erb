@@ -1,19 +1,19 @@
 
   <ul class="nav"> <!-- nav -->
     <li>
-      <%= link_to image_tag("/assets/Green-Option.png", :alt => "Sobre o Mapa da Cultura"), '/home/sobre', :id => 'popover-sobre', 'data-content' => 'Sobre o Mapa da Cultura', 'data-placement' => 'bottom'  %>
+      <%= link_to image_tag("/assets/Green-Option.png", :alt => "Sobre o Mapa da Cultura"), home_index_path, :id => 'popover-sobre', 'data-content' => 'Sobre o Mapa da Cultura', 'data-placement' => 'bottom'  %>
     </li>
 
     <li class="dropdown">
       <a id="entidade-drop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" data-content="Entidades e Equipamentos Culturais" data-placement="right">
-        <img src="/assets/Yellow-Option.png" alt="Entidades e Equipamentos Culturais"/>
+        <%= image_tag("/assets/Yellow-Option.png", :alt => "Entidades e Equipamentos") %>
       </a>
       <ul class="dropdown-menu" role="menu" aria-labelledby="entidade-drop">
         <li>
-          <a tabindex="-1" href="/entidade_equipamentos/">Listar</a>
+          <a tabindex="-1" href="<%= entidade_equipamentos_path %>">Listar</a>
         </li>
         <li>
-          <a tabindex="-1" href="/entidade_equipamentos/new">Cadastrar</a>
+          <a tabindex="-1" href="<%= new_entidade_equipamento_path %>">Cadastrar</a>
         </li>
       </ul>
     </li>
@@ -21,23 +21,25 @@
     <% if user_signed_in? %>
       <li>
         <li class="dropdown">
-          <a id="configurar-drop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><img src="/assets/Purple-Option.png" alt="Configurar" title="Configurar"/></a>
+          <a id="configurar-drop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+            <%= image_tag("/assets/Purple-Option.png", :alt => "Configurar") %>
+          </a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="configurar-drop">
               <li>
-                <a tabindex="-1" href="/users/edit">Alterar Senha</a>
+                <a tabindex="-1" href="<%= edit_user_registration_path %>">Alterar Senha</a>
               </li>
               <% if current_user.admin? %>
               <li>
-                <a tabindex="-1" href="/tipo_equipamentos">Tipos Equipamento</a>
+                <a tabindex="-1" href="<%= tipo_equipamentos_path %>">Tipos Equipamento</a>
               </li>
               <li>
-                <a tabindex="-1" href="/tipo_naturezas">Tipos de Naturezas</a>
+                <a tabindex="-1" href="<%= tipo_naturezas_path %>">Tipos de Naturezas</a>
               </li>
               <li>
-                <a tabindex="-1" href="/atividades">Atividades</a>
+                <a tabindex="-1" href="<%= atividades_path %>">Atividades</a>
               </li>
               <li>
-                <a tabindex="-1" href="/users">Usuários</a>
+                <a tabindex="-1" href="<%= users_path %>">Usuários</a>
               </li>
               <% end %>
           </ul>
