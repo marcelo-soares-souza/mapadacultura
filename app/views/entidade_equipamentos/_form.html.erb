@@ -89,6 +89,7 @@
   <% end %>
 <% end %>
 
+<!--
 <% if params[:action] != 'edit' %>
   <div class="control-group", id="tipo">
     <%= f.label :tipo_id, 'Tipo', :class => 'control-label' %>
@@ -97,25 +98,30 @@
     </div>
   </div>
 <% end %>
+-->
 
+<!--
 <div class="control-group" id="tipo_natureza">
   <%= f.label :tipo_natureza_id, 'Natureza', :class => 'control-label' %>
   <div class="controls">
     <%= f.collection_select :tipo_natureza_id, TipoNatureza.all, :id, :nome, {:prompt => true }, :class => 'span5' %>
   </div>
 </div>
+-->
 
+<!--
 <div class="control-group" id="tipo_equipamento">
   <%= f.label :tipo_equipamento_id, 'Tipo de Equipamento', :class => 'control-label' %>
   <div class="controls">
     <%= f.select( :tipo_equipamento_id, @tipo_equipamentos.collect { |l| [l.nome, l.id] }, {:include_blank => 'Selecione'}  ) %>
   </div>
 </div>
+-->
 
 <% if params[:action] == 'new' %>
   <%= f.fields_for :entidade_equipamento_atividades do |c| %>
     <div class="control-group atividade">
-      <%= c.label :atividade_id, 'Atividade Principal', :class => 'control-label' %>
+      <%= c.label :atividade_id, 'Categoria', :class => 'control-label' %>
       <div class="controls">
         <%= c.select( :atividade_id, @atividades.collect { |l| [l.nome, l.id] }, {:include_blank => 'Selecione'}  ) %>
         <%= c.hidden_field :ordem, :value => 1 %>
@@ -123,6 +129,7 @@
     </div>
   <% end %>
 
+  <!--
   <%= f.fields_for :entidade_equipamento_atividades do |c| %>
     <div class="control-group atividade">
       <%= c.label :atividade_id, 'Atividade Secundária', :class => 'control-label' %>
@@ -132,7 +139,9 @@
       </div>
     </div>
   <% end %>
+-->
 
+<!--
   <%= f.fields_for :entidade_equipamento_atividades do |c| %>
     <div class="control-group atividade">
       <%= c.label :atividade_id, 'Atividade Terciária', :class => 'control-label' %>
@@ -142,6 +151,7 @@
       </div>
     </div>
   <% end %>
+-->
 <% else %>
   <%= f.fields_for :entidade_equipamento_atividades do |c| %>
     <div class="control-group atividade">
@@ -157,13 +167,14 @@
   <% end %>
 <% end %>
 
-
+<!--
 <div class="control-group" id="ponto_de_cultura">
   <%= f.label :ponto_de_cultura, 'Ponto de Cultura', :class => 'control-label' %>
   <div class="controls">
     <%= f.select :ponto_de_cultura, 'Sim' => true, 'Não' => false %>
   </div>
 </div>
+-->
 
 <div class="control-group" id="tombado">
   <%= f.label :tombado, 'Tombado', :class => 'control-label' %>
@@ -193,7 +204,7 @@
   <div class="controls">
     <%= f.text_area :descricao, :class => 'span8', :cols => 32, :rows => 4, :maxlength => '1024' %>
     <div class="tip">
-      Descrição Resumida da Entidade/Equipamento Cultural
+      Descrição Resumida do Registro
     </div>
   </div>
 </div>
@@ -203,7 +214,7 @@
   <div class="controls">
     <%= f.text_field :email, :class => 'span5', :size => '64', :maxlength => '254' %>
     <div class="tip">
-      Apenas um E-Mail Válido que represente a Entidade/Equipamento Cultural
+      Apenas um E-Mail Válido que represente o Registro
     </div>
   </div>
 </div>
@@ -292,7 +303,7 @@
   <div class="controls">
     <%= f.file_field :imagem %>
     <div class="tip">
-      Uma Imagem que representa a Entidade/Equipamento Cultural.
+      Uma Imagem que representa o Registro
     </div>
   </div>
 </div>
@@ -338,7 +349,7 @@
 <% end %>
 
 <div class="form-actions">
-  <%= f.submit nil, :class => 'btn btn-primary', :disable_with => 'Enviando...' %>
+  <%= f.submit 'Registrar', :class => 'btn btn-primary', :disable_with => 'Enviando...' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")), entidade_equipamentos_path, :class => 'btn' %>
 </div>
 <% end %>

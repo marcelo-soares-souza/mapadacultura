@@ -21,12 +21,12 @@ class EntidadeEquipamento < ActiveRecord::Base
 
   validates :nome,        :presence => true, :length => { :minimum => 2 }
   validates :cep,         :presence => true, :length => { :minimum => 8, :maximum => 8 }
-  validates :contato,     :presence => true
+#  validates :contato,     :presence => true
   validates :descricao,   :presence => true
   validates :logradouro,  :presence => true, :length => { :minimum => 4 }
   validates :estado,      :presence => true
   validates :cidade,      :presence => true
-  validates :imagem,      :presence => true
+#  validates :imagem,      :presence => true
   validates :email,       :presence => true, :email_format => {:message => ' Formato Incorreto'}
 #  validates :latitude,    :presence => true
 #  validates :longitude,   :presence => true
@@ -44,7 +44,7 @@ class EntidadeEquipamento < ActiveRecord::Base
           <h3>#{self.nome[0..64]}</h3>
           <p>#{self.descricao.truncate(256)}</p>
           <br/>
-          <p><b>Saiba Mais: </b><a href=\"/entidade_equipamentos/#{self.slug}\" target=\"_blank\">#{self.nome.truncate(42)}</a></p>
+          <p><b>Saiba Mais: </b><a href=\"/registros/#{self.slug}\" target=\"_blank\">#{self.nome.truncate(42)}</a></p>
         </div>
         <div class=\"infowindow-logo\">
           <img src=\"#{self.imagem.url(:thumb)}\" width=\"150\" height=\"150\"/>
@@ -52,7 +52,7 @@ class EntidadeEquipamento < ActiveRecord::Base
       </div>
     "
   end
-  do_not_validate_attachment_file_type :imagem
+  # do_not_validate_attachment_file_type :imagem
 
   has_attached_file :imagem,
                     :url => "/system/entidade_equipamentos/images/:id/:basename_:style.:extension",

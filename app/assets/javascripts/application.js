@@ -97,7 +97,7 @@ function CarregarTipoEquipamentos(id) {
   if (document.getElementById(id).checked) {
     $.ajax({
       type : 'get',
-      url : '/entidade_equipamentos/view/equipamento/' + id.match(/\d+$/)[0] + '.json',
+      url : '/registros/view/equipamento/' + id.match(/\d+$/)[0] + '.json',
       contentType : 'application/json; charset=utf-8',
       dataType : 'json',
       success : function(responseData) {
@@ -107,7 +107,7 @@ function CarregarTipoEquipamentos(id) {
   } else {
     $.ajax({
       type : 'get',
-      url : '/entidade_equipamentos/view/equipamento/' + id.match(/\d+$/)[0] + '.json',
+      url : '/registros/view/equipamento/' + id.match(/\d+$/)[0] + '.json',
       contentType : 'applications/json; charset=utf-8',
       dataType : 'json',
       success : function(responseData) {
@@ -119,7 +119,7 @@ function CarregarTipoEquipamentos(id) {
             if (c[i].checked) {
               $.ajax({
                 type : 'get',
-                url : '/entidade_equipamentos/view/equipamento/' + (c[i].attributes["id"].value).match(/\d+$/)[0] + '.json',
+                url : '/registros/view/equipamento/' + (c[i].attributes["id"].value).match(/\d+$/)[0] + '.json',
                 contentType : 'application/json; charset=utf-8',
                 dataType : 'json',
                 success : function(responseData) {
@@ -138,7 +138,7 @@ function CarregarAtividades(id) {
   if (document.getElementById(id).checked) {
     $.ajax({
       type : 'get',
-      url : '/entidade_equipamentos/view/atividade/' + id.match(/\d+$/)[0] + '.json',
+      url : '/registros/view/atividade/' + id.match(/\d+$/)[0] + '.json',
       contentType : 'application/json; charset=utf-8',
       dataType : 'json',
       success : function(responseData) {
@@ -148,7 +148,7 @@ function CarregarAtividades(id) {
   } else {
     $.ajax({
       type : 'get',
-      url : '/entidade_equipamentos/view/atividade/' + id.match(/\d+$/)[0] + '.json',
+      url : '/registros/view/atividade/' + id.match(/\d+$/)[0] + '.json',
       contentType : 'application/json; charset=utf-8',
       dataType : 'json',
       success : function(responseData) {
@@ -160,7 +160,7 @@ function CarregarAtividades(id) {
             if (c[i].checked) {
               $.ajax({
                 type : 'get',
-                url : '/entidade_equipamentos/view/atividade/' + (c[i].attributes["id"].value).match(/\d+$/)[0] + '.json',
+                url : '/registros/view/atividade/' + (c[i].attributes["id"].value).match(/\d+$/)[0] + '.json',
                 contentType : 'application/json; charset=utf-8',
                 dataType : 'json',
                 success : function(responseData) {
@@ -179,7 +179,7 @@ function CarregarTipoEntidades(id) {
   if (document.getElementById(id).checked) {
     $.ajax({
       type : 'get',
-      url : '/entidade_equipamentos/view/entidade/' + id.match(/\d+$/)[0] + '.json',
+      url : '/registros/view/entidade/' + id.match(/\d+$/)[0] + '.json',
       contentType : 'application/json; charset=utf-8',
       dataType : 'json',
       success : function(responseData) {
@@ -189,7 +189,7 @@ function CarregarTipoEntidades(id) {
   } else {
     $.ajax({
       type : 'get',
-      url : '/entidade_equipamentos/view/entidade/' + id.match(/\d+$/)[0] + '.json',
+      url : '/registros/view/entidade/' + id.match(/\d+$/)[0] + '.json',
       contentType : 'application/json; charset=utf-8',
       dataType : 'json',
       success : function(responseData) {
@@ -201,7 +201,7 @@ function CarregarTipoEntidades(id) {
             if (c[i].checked) {
               $.ajax({
                 type : 'get',
-                url : '/entidade_equipamentos/view/entidade/' + (c[i].attributes["id"].value).match(/\d+$/)[0] + '.json',
+                url : '/registros/view/entidade/' + (c[i].attributes["id"].value).match(/\d+$/)[0] + '.json',
                 contentType : 'application/json; charset=utf-8',
                 dataType : 'json',
                 success : function(responseData) {
@@ -233,7 +233,7 @@ function initMapHelper() {
     var lonlatTransf = lonlat.transform(mapHelper.getProjectionObject(), proj4326);
   });
 
-  var icon = new OpenLayers.Icon('/assets/red-marker.png');   
+  var icon = new OpenLayers.Icon('/assets/red-marker.png');
   var markerslayer = new OpenLayers.Layer.Markers( "Markers" );
   var lonLatInitial = new OpenLayers.LonLat(document.getElementById("entidade_equipamento_longitude").value, document.getElementById("entidade_equipamento_latitude").value).transform( new OpenLayers.Projection("EPSG:4326"), mapHelper.getProjectionObject());
   markerslayer.addMarker(new OpenLayers.Marker(lonLatInitial, icon));

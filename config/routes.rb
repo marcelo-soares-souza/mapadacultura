@@ -5,7 +5,7 @@ Mapadacultura::Application.routes.draw do
       put 'users' => 'devise/registrations#update', :as => 'user_registration'   
     end
 
-  resources :entidade_equipamentos do
+  resources :entidade_equipamentos, :path => :registros do
     resources :questionario_basico_entidades, :path => 'questionario'
     resources :fotos,  :controller => "fotos"
     resources :videos, :controller => "videos" do

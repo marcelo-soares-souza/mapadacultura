@@ -2,12 +2,6 @@
   <li>
     <%= link_to "Todos", entidade_equipamentos_path %>
   </li>
-  <li>
-    <%= link_to "Entidades", entidades_entidade_equipamentos_path %>
-  </li>
-  <li>
-    <%= link_to "Equipamentos", equipamentos_entidade_equipamentos_path %>
-  </li>
   <li class="active">
     <%= link_to "Avaliar", evaluate_entidade_equipamentos_path if current_user.admin? %>
   </li>

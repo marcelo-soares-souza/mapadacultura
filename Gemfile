@@ -26,8 +26,8 @@ gem 'ckeditor', '~> 4.0.2'
 
 # Media
 gem 'mime-types', :require => 'mime/types'
-gem 'paperclip', '4.1.1'
-gem 'paperclip-ffmpeg', '1.0.1'
+gem 'paperclip', '3.5.4'
+gem 'paperclip-ffmpeg', '1.2.0'
 gem 'rmagick'
 gem 'fancybox2-rails'
 
