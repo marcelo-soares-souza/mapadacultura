@@ -28,7 +28,7 @@ Mapadacultura::Application.routes.draw do
   resources :tipos
   resources :tipo_equipamentos
   resources :tipo_naturezas
-  resources :atividades
+  resources :atividades, :path => :categorias
   resources :users
 
   get '/estados/:sigla/cidades', :to => 'cidades#index'
