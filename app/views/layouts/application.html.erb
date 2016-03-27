@@ -2,7 +2,7 @@
 
 <!-- 
     Mapa da Cultura - GPLv3
-    Copyright (C) 2013 Marcelo Soares Souza <marcelo@juntadados.org>
+    Copyright (C) 2013-2016 Marcelo Soares Souza <marcelo@libertais.org>
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -20,12 +20,12 @@
 
 <html lang="pt-br">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="O Mapa da Cultura é uma ferramenta interativa e livre que tem como objetivo dar visibilidade à produção Cultural brasileira além de produzir indicadores e diagnósticos sobre a dinâmica Cultural no Brasil">
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Observatório LGBT"/>
 
-    <title><%= content_for?(:title) ? yield(:title) : "Mapa da Cultura LGBT" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Observatório LGBT LGBT" %></title>
 
     <%= csrf_meta_tags %>
 
@@ -52,7 +52,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="<%= home_index_path %>">Mapa da Cultura</a>
+          <a class="brand" href="<%= home_index_path %>">Observatório LGBT</a>
           <div class="container-fluid nav-collapse">
             <%= render 'layouts/menu' %>
           </div><!--/.nav-collapse -->

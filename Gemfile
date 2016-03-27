@@ -10,6 +10,7 @@ gem 'i18n'
 gem 'rake', '10.4.0'
 
 gem 'pg'
+gem 'sqlite3'
 
 gem 'sass-rails',   '~> 3.2.3'
 gem 'coffee-rails', '~> 3.2.1'
