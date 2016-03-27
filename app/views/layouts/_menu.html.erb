@@ -1,12 +1,8 @@
 
   <ul class="nav"> <!-- nav -->
-    <li>
-      <%= link_to image_tag("/assets/Green-Option.png", :alt => "Mapas do Observatório LGBT"), home_index_path, :id => 'popover-sobre', 'data-content' => 'Mapas do Observatório LGBT', 'data-placement' => 'bottom'  %>
-    </li>
-
     <li class="dropdown">
-      <a id="entidade-drop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" data-content="Entidades e Equipamentos Culturais" data-placement="right">
-        <%= image_tag("/assets/Yellow-Option.png", :alt => "Entidades e Equipamentos") %>
+      <a id="entidade-drop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" data-content="Registros" data-placement="right">
+        <%= image_tag("/assets/Yellow-Option.png", :alt => "Registros") %>
       </a>
       <ul class="dropdown-menu" role="menu" aria-labelledby="entidade-drop">
         <li>
@@ -21,8 +17,8 @@
     <% if user_signed_in? %>
       <li>
         <li class="dropdown">
-          <a id="configurar-drop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
-            <%= image_tag("/assets/Purple-Option.png", :alt => "Configurar") %>
+          <a id="configurar-drop" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown" data-content="Administração" data-placement="right">
+            <%= image_tag("/assets/Purple-Option.png", :alt => "Administração") %>
           </a>
           <ul class="dropdown-menu" role="menu" aria-labelledby="configurar-drop">
               <li>
@@ -47,7 +43,7 @@
       </li>
 
     <li class="login" id="logout">
-      <%= link_to image_tag("/assets/Red-Option.png", :alt => "Deslogar", :title => "Deslogar") + " (" + current_user.firstname + ")", destroy_user_session_path, :method => :delete %>
+      <%= link_to image_tag("/assets/Red-Option.png", :alt => "Deslogar", :title => "Deslogar") + " (Logout)", destroy_user_session_path, :method => :delete %>
     </li>
 
     <% else %>
