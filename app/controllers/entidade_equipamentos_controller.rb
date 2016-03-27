@@ -90,7 +90,12 @@ class EntidadeEquipamentosController < ApplicationController
   # GET /entidade_equipamentos/1.json
   def show
     @entidade_equipamento = EntidadeEquipamento.find(params[:id])
-    @map = @entidade_equipamento.to_gmaps4rails
+
+    @map = @entidade_equipamento.to_gmaps4rails do |entidade_equipamento, marker|
+      marker.title entidade_equipamento.nome + " - " + entidade_equipamento.entidade_equipamento_atividades[0].atividade.nome
+      marker.picture({ :picture => "#{entidade_equipamento.entidade_equipamento_atividades[0].atividade.imagem.url}", :width =>  '32', :height => '32' })
+      marker.json({:id => entidade_equipamento.id})
+    end
 
     respond_to do |format|
       format.html # show.html.erb

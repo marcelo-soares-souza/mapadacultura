@@ -2,11 +2,13 @@
   <li class="active">
     <%= link_to "Todos", entidade_equipamentos_path %>
   </li>
+  <!--
   <li>
     <% if user_signed_in? %>
       <%= link_to "Avaliar", evaluate_entidade_equipamentos_path if current_user.admin?%>
     <% end %>
   </li>
+  -->
   <li>
     <%= link_to "Cadastrar", new_entidade_equipamento_path %>
   </li>
@@ -43,8 +45,10 @@
           <th>Instituição/Entidade</th>
           <th>Estado</th>
           <th>Atividade / Tipo</th>
+          <!--
           <th>Fotos</th>
           <th>Vídeos</th>
+          -->
           <th><%= 'Publicado' if user_signed_in? %></th>
           <th><%= t '.actions', :default => t("helpers.actions") if user_signed_in? %></th>
         </tr>
@@ -91,8 +95,10 @@
               <% end %>
             </td>
           <% end %>
+          <!--
           <td><%= entidade_equipamento.fotos.size %></td>
           <td><%= entidade_equipamento.videos.size %></td>
+          -->
           <td><strong><%= I18n.t(entidade_equipamento.publicar.to_s) if user_signed_in? %></strong></td>
           <% if user_signed_in? %>
             <% if  (current_user.id == entidade_equipamento.user.id) || (current_user.admin?) %>
