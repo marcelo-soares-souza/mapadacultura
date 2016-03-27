@@ -28,7 +28,7 @@
 }
 
 #main-content {
-  background-image: url("assets/Background-MapaDaCultura.jpg");
+  /* background-image: url(<%= asset_path 'Background-MapaDaCultura.jpg' %>) */
   background-repeat: repeat;
   background-attachment: scroll;
 }
