@@ -155,9 +155,9 @@
 <% else %>
   <%= f.fields_for :entidade_equipamento_atividades do |c| %>
     <div class="control-group atividade">
-      <% label = 'Atividade Principal'  if c.object.ordem == 1 %>
-      <% label = 'Atividade Secundária' if c.object.ordem == 2 %>
-      <% label = 'Atividade Terciária'  if c.object.ordem == 3 %>
+      <% label = 'Categoria'  if c.object.ordem == 1 %>
+      <!-- <% label = 'Atividade Secundária' if c.object.ordem == 2 %> -->
+      <!-- <% label = 'Atividade Terciária'  if c.object.ordem == 3 %> -->
       <%= c.label :atividade_id, label, :class => 'control-label' %>
       <div class="controls">
         <%= c.select( :atividade_id, @atividades.collect { |l| [l.nome, l.id] }, {:include_blank => 'Selecione'}  ) %>
@@ -175,18 +175,27 @@
   </div>
 </div>
 -->
-
+<!--
 <div class="control-group" id="tombado">
   <%= f.label :tombado, 'Tombado', :class => 'control-label' %>
   <div class="controls">
     <%= f.select :tombado, 'Sim' => true, 'Não' => false %>
   </div>
 </div>
+-->
 
 <div class="control-group">
   <%= f.label :nome, 'Nome', :class => 'control-label' %>
   <div class="controls">
     <%= f.text_field :nome, :autofocus => true, :class => 'span6', :size => '64', :maxlength => '254' %>
+    <br/>
+  </div>
+</div>
+
+<div class="control-group">
+  <%= f.label :instituicao, 'Instituição/Entidade', :class => 'control-label' %>
+  <div class="controls">
+    <%= f.text_field :instituicao, :class => 'span6', :size => '64', :maxlength => '254' %>
     <br/>
   </div>
 </div>

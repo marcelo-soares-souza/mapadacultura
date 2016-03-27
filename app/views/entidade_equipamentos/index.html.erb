@@ -40,6 +40,7 @@
         <tr>
           <th>#</th>
           <th>Nome</th>
+          <th>Instituição/Entidade</th>
           <th>Estado</th>
           <th>Atividade / Tipo</th>
           <th>Fotos</th>
@@ -54,7 +55,8 @@
         <tr>
           <td><%= link_to entidade_equipamento.id, entidade_equipamento_path(entidade_equipamento)   %></td>
           <td><%= link_to entidade_equipamento.nome, entidade_equipamento_path(entidade_equipamento) %></td>
-          <td><%= entidade_equipamento.estado %></td>    
+          <td><%= link_to entidade_equipamento.instituicao, entidade_equipamento_path(entidade_equipamento) %></td>
+          <td><%= entidade_equipamento.estado %></td>
           <% if entidade_equipamento.tipo_id == 2 %>
             <td>
               <% if entidade_equipamento.tipo_equipamento.try(:imagem) %>
@@ -64,7 +66,7 @@
               <% end %>
             </td>
           <% else %>
-            <% 
+            <%
               if ! entidade_equipamento.entidade_equipamento_atividades[0].nil?
                 if entidade_equipamento.entidade_equipamento_atividades[0].ordem == 1
                   ordem = 0

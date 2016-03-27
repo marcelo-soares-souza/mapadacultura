@@ -57,13 +57,20 @@
                 <% label = 'Secundária' if entidade_equipamento_atividade.ordem == 2 %>
                 <% label = 'Terciária'  if entidade_equipamento_atividade.ordem == 3 %>
                 <dt>
-                  <strong>Atividade <%= label %>:</strong>
+                  <strong>Categoria:</strong>
                 </dt>
                 <dd>
                   <%= entidade_equipamento_atividade.atividade.nome if ! entidade_equipamento_atividade.atividade.nil?  %>&nbsp;
                 </dd>
               <% end %>
             <% end %>
+
+            <dt>
+              <strong>Instituição/Entidade:</strong>
+            </dt>
+            <dd>
+              <%= @entidade_equipamento.instituicao %>&nbsp;
+            </dd>
 
             <dt>
               <strong>Descrição:</strong>

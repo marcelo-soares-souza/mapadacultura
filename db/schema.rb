@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130225165300) do
+ActiveRecord::Schema.define(:version => 20160327153245) do
 
   create_table "atividades", :force => true do |t|
     t.string   "nome"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20130225165300) do
     t.string   "imagem_content_type"
     t.integer  "imagem_file_size"
     t.datetime "imagem_updated_at"
+    t.string   "instituicao"
   end
 
   add_index "entidade_equipamentos", ["tipo_equipamento_id"], :name => "index_entidade_equipamentos_on_tipo_equipamento_id"
