@@ -42,7 +42,7 @@ class EntidadeEquipamento < ActiveRecord::Base
     "
       <div class=\"infowindow\">
         <div class=\"infowindow-titulo\">
-          <h3><a href=\"/registros/#{self.slug}\" target=\"_blank\">#{self.nome[0..64]}</a></h3>
+          <h3><a href=\"/mapas/registros/#{self.slug}\" target=\"_blank\">#{self.nome[0..64]}</a></h3>
           <p><strong>Instituição/Entidade:</strong> #{self.instituicao.truncate(256)}</p>
           <p><strong>Descrição:</strong> #{self.descricao.truncate(256)}</p>
           <br/>
