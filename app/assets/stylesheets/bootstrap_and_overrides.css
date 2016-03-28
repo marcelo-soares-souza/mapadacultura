@@ -70,7 +70,7 @@ input[type="checkbox"] {
 .navbar-inner {
   background: #fff;
   font-color: #000;
-  border: 1px solid #000;
+  border: 0;
 }
 
 .navbar .nav > li > a {
@@ -106,7 +106,6 @@ input[type="checkbox"] {
 }
 
 .page-header {
-  border-bottom: 1px solid #EEEEEE;
   margin: 8px 0 8px;
   padding-bottom: 4px;
 }
@@ -146,8 +145,13 @@ h3 {
 }
 
 .accordion-inner, .accordion-group {
-  border: 0px;
+  border: 0;
 }
+
+.accordion-inner {
+  padding: 0px 0px;
+}
+
 .accordion-heading {
   font-size: 16px;
   background-color: #fff;

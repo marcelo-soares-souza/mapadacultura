@@ -15,10 +15,8 @@
  */
 
 .navbar-inner {
-/*  text-transform: uppercase; */
   background: #000;
   font-color: #fff;
-  border: 1px solid #000;
 }
 
 .tip {
@@ -30,8 +28,7 @@
 .tipo {
   font-size: 13px;
   font-weight: 900;
-  padding: 10px 4px 10px 4px;
-  border: 1px solid #E0E0E0;
+  padding: 8px 4px 8px 4px;
 }
 
 .infowindow {

@@ -1,9 +1,14 @@
 body {
-  background-color: #fff;
+  background-image: url('/mapas/assets/background.png');
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+}
+
+#main-area {
+  background-color: #fff;
+  margin: 0px 5% 0px 5%;
 }
 
 p, ol, ul, td {

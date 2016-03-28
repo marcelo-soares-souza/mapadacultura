@@ -44,6 +44,7 @@
     <%= javascript_include_tag "application" %>
     <%= yield :scripts %>
 
+  <div id="main-area">
     <div class="navbar navbar-fluid-top">
       <div class="navbar-inner">
         <div class="container-fluid">
@@ -80,5 +81,6 @@
       </div>
       <%= render 'layouts/footer' %>
     </div>
+  </div>
   </body>
 </html>
