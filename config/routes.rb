@@ -31,7 +31,7 @@ Mapadacultura::Application.routes.draw do
   resources :atividades, :path => :categorias
   resources :users
 
-  get '/estados/:sigla/cidades', :to => 'cidades#index'
+  get '/estados/:sigla/cidades', :as => :cidades, :to => 'cidades#index'
   get '/cep/:cep', :to => 'application#cep'
 
   get "home/index"

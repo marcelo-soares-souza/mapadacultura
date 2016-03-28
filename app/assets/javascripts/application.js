@@ -16,9 +16,13 @@
 //= require jquery_ujs
 //= require fancybox
 //= require twitter/bootstrap
+//= require js-routes
 //= require_tree .
 
 // jQuery Functions
+
+var RAILS_RELATIVE_URL_ROOT = "/mapas"
+
 $(document).ready(function() {
 
   $('#popover-sobre').popover({ trigger: "hover" });
@@ -29,11 +33,11 @@ $(document).ready(function() {
   $('.jquery-ui-date').datepicker({
     showOn : 'button',
     buttonImageOnly : true,
-    buttonImage : '/assets/calendar.png'
+    buttonImage : RAILS_RELATIVE_URL_ROOT + '/assets/calendar.png'
   });
 
   $('#estado').on('change', function() {
-    $.getJSON('/estados/' + $(this).val() + '/cidades.json', function(data) {
+    $.getJSON(Routes.cidades_path($(this).val()) + '.json', function(data) {
       $('#cidade').empty();
 
       $.each(data, function(i, item) {
@@ -138,7 +142,7 @@ function CarregarAtividades(id) {
   if (document.getElementById(id).checked) {
     $.ajax({
       type : 'get',
-      url : '/registros/view/atividade/' + id.match(/\d+$/)[0] + '.json',
+      url : Routes.atividade_entidade_equipamentos_path(id.match(/\d+$/)[0]) + '.json',
       contentType : 'application/json; charset=utf-8',
       dataType : 'json',
       success : function(responseData) {
@@ -148,7 +152,7 @@ function CarregarAtividades(id) {
   } else {
     $.ajax({
       type : 'get',
-      url : '/registros/view/atividade/' + id.match(/\d+$/)[0] + '.json',
+      url : Routes.atividade_entidade_equipamentos_path(id.match(/\d+$/)[0]) + '.json',
       contentType : 'application/json; charset=utf-8',
       dataType : 'json',
       success : function(responseData) {
@@ -160,7 +164,7 @@ function CarregarAtividades(id) {
             if (c[i].checked) {
               $.ajax({
                 type : 'get',
-                url : '/registros/view/atividade/' + (c[i].attributes["id"].value).match(/\d+$/)[0] + '.json',
+                url : Routes.atividade_entidade_equipamentos_path(c[i].attributes["id"].value).match(/\d+$/)[0] + '.json',
                 contentType : 'application/json; charset=utf-8',
                 dataType : 'json',
                 success : function(responseData) {
@@ -233,7 +237,7 @@ function initMapHelper() {
     var lonlatTransf = lonlat.transform(mapHelper.getProjectionObject(), proj4326);
   });
 
-  var icon = new OpenLayers.Icon('/assets/red-marker.png');
+  var icon = new OpenLayers.Icon(RAILS_RELATIVE_URL_ROOT + '/assets/red-marker.png');
   var markerslayer = new OpenLayers.Layer.Markers( "Markers" );
   var lonLatInitial = new OpenLayers.LonLat(document.getElementById("entidade_equipamento_longitude").value, document.getElementById("entidade_equipamento_latitude").value).transform( new OpenLayers.Projection("EPSG:4326"), mapHelper.getProjectionObject());
   markerslayer.addMarker(new OpenLayers.Marker(lonLatInitial, icon));

@@ -9,7 +9,7 @@ class EntidadeEquipamentosController < ApplicationController
 
     @map = @entidade_equipamentos.to_gmaps4rails do |entidade_equipamento, marker|
       marker.title entidade_equipamento.nome + " - " + entidade_equipamento.tipo_equipamento.nome
-      marker.picture({ :picture => "#{entidade_equipamento.tipo_equipamento.imagem.url}", :width =>  '32', :height => '32' })
+      marker.picture({ :picture => "#{ENV['RAILS_RELATIVE_URL_ROOT']}/#{entidade_equipamento.tipo_equipamento.imagem.url}", :width =>  '32', :height => '32' })
       marker.json({:id => entidade_equipamento.id})
     end
 
@@ -24,7 +24,7 @@ class EntidadeEquipamentosController < ApplicationController
 
     @map = @entidade_equipamentos.to_gmaps4rails do |entidade_equipamento, marker|
       marker.title entidade_equipamento.nome + " - " + entidade_equipamento.entidade_equipamento_atividades[0].atividade.nome
-      marker.picture({ :picture => "#{entidade_equipamento.entidade_equipamento_atividades[0].atividade.imagem.url}", :width =>  '32', :height => '32' })
+      marker.picture({ :picture => "#{ENV['RAILS_RELATIVE_URL_ROOT']}/#{entidade_equipamento.entidade_equipamento_atividades[0].atividade.imagem.url}", :width =>  '32', :height => '32' })
       marker.json({:id => entidade_equipamento.id})
     end
 
@@ -93,7 +93,7 @@ class EntidadeEquipamentosController < ApplicationController
 
     @map = @entidade_equipamento.to_gmaps4rails do |entidade_equipamento, marker|
       marker.title entidade_equipamento.nome + " - " + entidade_equipamento.entidade_equipamento_atividades[0].atividade.nome
-      marker.picture({ :picture => "#{entidade_equipamento.entidade_equipamento_atividades[0].atividade.imagem.url}", :width =>  '32', :height => '32' })
+      marker.picture({ :picture => "#{ENV['RAILS_RELATIVE_URL_ROOT']}/#{entidade_equipamento.entidade_equipamento_atividades[0].atividade.imagem.url}", :width =>  '32', :height => '32' })
       marker.json({:id => entidade_equipamento.id})
     end
 
