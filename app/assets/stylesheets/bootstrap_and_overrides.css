@@ -80,7 +80,7 @@ input[type="checkbox"] {
   padding: 5px 10px;
   text-decoration: none;
   text-shadow: none;
-}  background: #fff;
+}
 
 .navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
   color: #6B6B6B;
