@@ -35,11 +35,13 @@
 }
 
 .infowindow {
-  min-width: 600px;
-  min-height: 220px;
-  padding: 8px 8px 8px 8px;
+  min-width: 500px;
+  min-height: 170px;
+  padding: 10px 10px 10px 10px;
   border: 1px solid #B50000;
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-botton: 15px;
+  margin-left: 15px;
 }
 
 .infowindow-titulo {
