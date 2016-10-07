@@ -101,7 +101,7 @@ function CarregarTipoEquipamentos(id) {
   if (document.getElementById(id).checked) {
     $.ajax({
       type : 'get',
-      url : '/registros/view/equipamento/' + id.match(/\d+$/)[0] + '.json',
+      url : '/mapas/registros/view/equipamento/' + id.match(/\d+$/)[0] + '.json',
       contentType : 'application/json; charset=utf-8',
       dataType : 'json',
       success : function(responseData) {
@@ -111,7 +111,7 @@ function CarregarTipoEquipamentos(id) {
   } else {
     $.ajax({
       type : 'get',
-      url : '/registros/view/equipamento/' + id.match(/\d+$/)[0] + '.json',
+      url : '/mapas/registros/view/equipamento/' + id.match(/\d+$/)[0] + '.json',
       contentType : 'applications/json; charset=utf-8',
       dataType : 'json',
       success : function(responseData) {
@@ -123,7 +123,7 @@ function CarregarTipoEquipamentos(id) {
             if (c[i].checked) {
               $.ajax({
                 type : 'get',
-                url : '/registros/view/equipamento/' + (c[i].attributes["id"].value).match(/\d+$/)[0] + '.json',
+                url : '/mapas/registros/view/equipamento/' + (c[i].attributes["id"].value).match(/\d+$/)[0] + '.json',
                 contentType : 'application/json; charset=utf-8',
                 dataType : 'json',
                 success : function(responseData) {
@@ -183,7 +183,7 @@ function CarregarTipoEntidades(id) {
   if (document.getElementById(id).checked) {
     $.ajax({
       type : 'get',
-      url : '/registros/view/entidade/' + id.match(/\d+$/)[0] + '.json',
+      url : '/mapas/registros/view/entidade/' + id.match(/\d+$/)[0] + '.json',
       contentType : 'application/json; charset=utf-8',
       dataType : 'json',
       success : function(responseData) {
@@ -193,7 +193,7 @@ function CarregarTipoEntidades(id) {
   } else {
     $.ajax({
       type : 'get',
-      url : '/registros/view/entidade/' + id.match(/\d+$/)[0] + '.json',
+      url : '/mapas/registros/view/entidade/' + id.match(/\d+$/)[0] + '.json',
       contentType : 'application/json; charset=utf-8',
       dataType : 'json',
       success : function(responseData) {
@@ -205,7 +205,7 @@ function CarregarTipoEntidades(id) {
             if (c[i].checked) {
               $.ajax({
                 type : 'get',
-                url : '/registros/view/entidade/' + (c[i].attributes["id"].value).match(/\d+$/)[0] + '.json',
+                url : '/mapas/registros/view/entidade/' + (c[i].attributes["id"].value).match(/\d+$/)[0] + '.json',
                 contentType : 'application/json; charset=utf-8',
                 dataType : 'json',
                 success : function(responseData) {
