@@ -15,11 +15,11 @@ Mapadacultura::Application.configure do
 #  }
 
   config.action_mailer.smtp_settings = {
-  address:              'smtp.gmail.com',
+  address:              'smtp.mapadacultura.org',
   port:                 587,
   domain:               'mapadacultura.org',
-  user_name:            'soares.souza@gmail.com',
-  password:             '1234X3m3l334livre1234',
+  user_name:            'username',
+  password:             'password',
   authentication:       'plain',
   enable_starttls_auto: true  }
 
